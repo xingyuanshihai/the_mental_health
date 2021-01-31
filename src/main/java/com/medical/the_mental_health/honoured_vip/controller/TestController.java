@@ -1,29 +1,41 @@
 package com.medical.the_mental_health.honoured_vip.controller;
 
 import com.medical.the_mental_health.commen.page.Result;
-import com.medical.the_mental_health.honoured_vip.service.TestService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.medical.the_mental_health.entity.TMember;
+import com.medical.the_mental_health.honoured_vip.service.HonouredService;
+import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @author LocalUserZzy
  */
 @RestController
-@RequestMapping("vip")
-@CrossOrigin
+@RequestMapping("honoured")
+//@CrossOrigin
 public class TestController {
 
-    @Autowired
-    private TestService testService;
+    private final HonouredService honouredService;
+
+    public TestController(HonouredService honouredService) {
+        this.honouredService = honouredService;
+    }
 
     @GetMapping("list")
-    public Result test() throws SQLException {
+    public Result list() {
+        List<TMember> results = honouredService.list();
+        return new Result(true, "测试接口,查看dataSourcePoll是否配置成功",results);
+    }
 
-        return new Result(true, "测试接口,查看dataSourcePoll是否配置成功",new String("str"));
+    @PostMapping("save")
+    public Result save(TMember member) {
+        Integer rowInteger = honouredService.saveHonoured(member);
+        return new Result(true, "成功添加"+rowInteger+"个会员!",member.getId());
+    }
+
+    @GetMapping("del/{id}")
+    public Result del(@PathVariable("id") Integer id) {
+        Integer rowInteger = honouredService.delHonoured(id);
+        return new Result(true, "成功添加"+rowInteger+"个会员!");
     }
 }
