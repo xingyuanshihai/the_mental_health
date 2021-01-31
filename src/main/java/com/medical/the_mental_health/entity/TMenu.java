@@ -1,4 +1,4 @@
-package com.sample;
+package com.medical.the_mental_health.entity;
 
 
 public class TMenu {
