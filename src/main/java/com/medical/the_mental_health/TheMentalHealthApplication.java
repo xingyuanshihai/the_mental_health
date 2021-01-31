@@ -3,6 +3,9 @@ package com.medical.the_mental_health;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author SpringBootApplication
+ */
 @SpringBootApplication
 public class TheMentalHealthApplication {
 
