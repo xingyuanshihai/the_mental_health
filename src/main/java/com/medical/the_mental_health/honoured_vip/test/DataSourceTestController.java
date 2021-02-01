@@ -1,4 +1,4 @@
-package com.medical.the_mental_health.honoured_vip.controller;
+package com.medical.the_mental_health.honoured_vip.test;
 
 import com.medical.the_mental_health.commen.page.Result;
 import org.springframework.web.bind.annotation.GetMapping;
