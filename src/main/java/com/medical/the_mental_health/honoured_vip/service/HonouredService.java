@@ -27,7 +27,7 @@ public interface HonouredService {
      * @param id 要删除会员的ID编号
      * @return 删除了几个会员
      */
-    Integer delHonoured(Integer id);
+    Integer delete(Integer id);
 
     /**
      * 修改会员信息

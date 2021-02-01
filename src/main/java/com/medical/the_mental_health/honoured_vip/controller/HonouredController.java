@@ -33,23 +33,23 @@ public class HonouredController {
     public Result save(@RequestBody TMember member) {
         log.info("会员信息:{}",member);
         return new Result(true, "测试接口!");
-//        Integer rowInteger = honouredService.saveHonoured(member);
-//        return new Result(true, "成功添加"+rowInteger+"个会员!",member.getId());
+        /*Integer rowInteger = honouredService.save(member);
+        return new Result(true, "成功添加"+rowInteger+"个会员!",member.getId());*/
     }
 
     @PutMapping("")
     public Result update(@RequestBody TMember member) {
         log.info("会员修改后信息:{}",member);
         return new Result(true, "测试接口!");
-//        Integer rowInteger = honouredService.updateHonoured(member);
-//        return new Result(true, "成功添加"+rowInteger+"个会员!",member.getId());
+        /*honouredService.update(member);
+        return new Result(true, "成功添加"+rowInteger+"个会员!",member.getId());*/
     }
 
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable("id") Integer id) {
         log.info("要删除的会员ID编号:{}",id);
         return new Result(true, "测试接口!");
-        /*Integer rowInteger = honouredService.delHonoured(id);
+        /*Integer rowInteger = honouredService.delete(id);
         return new Result(true, "成功添加"+rowInteger+"个会员!");*/
     }
 }

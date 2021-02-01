@@ -18,7 +18,7 @@ public class HonouredServiceImpl implements HonouredService {
     private HonouredMapper honouredMapper;
 
     @Override
-    public Integer delHonoured(Integer id) {
+    public Integer delete(Integer id) {
         return honouredMapper.delete(id);
     }
 
