@@ -13,11 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("honoured")
 //@CrossOrigin
-public class TestController {
+public class HonouredController {
 
     private final HonouredService honouredService;
 
-    public TestController(HonouredService honouredService) {
+    public HonouredController(HonouredService honouredService) {
         this.honouredService = honouredService;
     }
 
@@ -29,15 +29,15 @@ public class TestController {
 
     @PostMapping("save")
     public Result save(@RequestBody TMember member) {
-        System.out.println(member);
-//        Integer rowInteger = honouredService.saveHonoured(member);
-//        return new Result(true, "成功添加"+rowInteger+"个会员!",member.getId());
-        return new Result(true, "测试接口");
+        Integer rowInteger = honouredService.saveHonoured(member);
+        return new Result(true, "成功添加"+rowInteger+"个会员!",member.getId());
     }
 
-    @GetMapping("del/{id}")
+    @DeleteMapping("del/{id}")
     public Result del(@PathVariable("id") Integer id) {
-        Integer rowInteger = honouredService.delHonoured(id);
-        return new Result(true, "成功添加"+rowInteger+"个会员!");
+        System.out.println(id);
+        return new Result(true, "测试接口!");
+        /*Integer rowInteger = honouredService.delHonoured(id);
+        return new Result(true, "成功添加"+rowInteger+"个会员!");*/
     }
 }
