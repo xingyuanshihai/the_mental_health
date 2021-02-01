@@ -4,6 +4,7 @@ import com.medical.the_mental_health.commen.page.Result;
 import com.medical.the_mental_health.entity.TMember;
 import com.medical.the_mental_health.honoured_vip.service.HonouredService;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -51,5 +52,18 @@ public class HonouredController {
         return new Result(true, "测试接口!");
         /*Integer rowInteger = honouredService.delete(id);
         return new Result(true, "成功添加"+rowInteger+"个会员!");*/
+    }
+
+    public static Logger getLog() {
+        return log;
+    }
+
+    public void out(String message , Object... data) {
+        Logger log = getLog();
+        log.info(message,data);
+    }
+
+    public void test() {
+        out("str:{}",new TMember());
     }
 }

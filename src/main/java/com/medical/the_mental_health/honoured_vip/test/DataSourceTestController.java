@@ -1,13 +1,13 @@
 package com.medical.the_mental_health.honoured_vip.test;
 
 import com.medical.the_mental_health.commen.page.Result;
+import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.SQLException;
 
 /**
  * @author LocalUserZzy
@@ -22,8 +22,12 @@ public class DataSourceTestController {
         this.dataSource = dataSource;
     }
 
+    /**
+     * {@link SneakyThrows}:这个注解是Lombok提供的,加入此注解后可以不需要显式的抛出异常
+     */
     @GetMapping("/dataSource")
-    public Result test() throws SQLException {
+    @SneakyThrows
+    public Result test() {
         System.out.println(dataSource);
         Connection connection = dataSource.getConnection();
         System.out.println(connection);
