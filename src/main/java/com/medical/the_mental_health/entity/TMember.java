@@ -113,4 +113,20 @@ public class TMember {
     this.remark = remark;
   }
 
+  @Override
+  public String toString() {
+    return "TMember{" +
+            "id=" + id +
+            ", fileNumber='" + fileNumber + '\'' +
+            ", name='" + name + '\'' +
+            ", sex='" + sex + '\'' +
+            ", idCard='" + idCard + '\'' +
+            ", phoneNumber='" + phoneNumber + '\'' +
+            ", regTime=" + regTime +
+            ", password='" + password + '\'' +
+            ", email='" + email + '\'' +
+            ", birthday=" + birthday +
+            ", remark='" + remark + '\'' +
+            '}';
+  }
 }

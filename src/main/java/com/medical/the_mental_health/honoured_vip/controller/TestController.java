@@ -28,9 +28,11 @@ public class TestController {
     }
 
     @PostMapping("save")
-    public Result save(TMember member) {
-        Integer rowInteger = honouredService.saveHonoured(member);
-        return new Result(true, "成功添加"+rowInteger+"个会员!",member.getId());
+    public Result save(@RequestBody TMember member) {
+        System.out.println(member);
+//        Integer rowInteger = honouredService.saveHonoured(member);
+//        return new Result(true, "成功添加"+rowInteger+"个会员!",member.getId());
+        return new Result(true, "测试接口");
     }
 
     @GetMapping("del/{id}")
