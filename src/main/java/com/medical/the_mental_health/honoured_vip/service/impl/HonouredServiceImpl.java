@@ -19,12 +19,17 @@ public class HonouredServiceImpl implements HonouredService {
 
     @Override
     public Integer delHonoured(Integer id) {
-        return honouredMapper.delHonoured(id);
+        return honouredMapper.delete(id);
     }
 
     @Override
-    public Integer saveHonoured(TMember member) {
-        return honouredMapper.saveHonoured(member);
+    public void update(TMember member) {
+        honouredMapper.update(member);
+    }
+
+    @Override
+    public Integer save(TMember member) {
+        return honouredMapper.save(member);
     }
 
     @Override

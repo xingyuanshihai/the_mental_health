@@ -23,12 +23,18 @@ public interface HonouredMapper {
      * @param member 会员信息对象
      * @return 添加了几个会员
      */
-    Integer saveHonoured(TMember member);
+    Integer save(TMember member);
 
     /**
      * 按照ID编号删除会员
      * @param id 要删除会员的ID编号
      * @return 删除了几个会员
      */
-    Integer delHonoured(@Param("id") Integer id);
+    Integer delete(@Param("id") Integer id);
+
+    /**
+     * 修改会员信息
+     * @param member 会员信息
+     */
+    void update(TMember member);
 }

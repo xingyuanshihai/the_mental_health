@@ -6,12 +6,16 @@
         select * from `t_member`
     </select>
 
-    <insert id="saveHonoured" parameterType="TMember" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    <insert id="save" parameterType="TMember" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
         insert into t_member values ()
     </insert>
 
-    <delete id="delHonoured">
+    <delete id="delete">
         delete from t_member
         where id = #{id}
     </delete>
+
+    <update id="update" parameterType="TMember">
+#         update t_member
+    </update>
 </mapper>

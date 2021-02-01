@@ -20,7 +20,7 @@ public interface HonouredService {
      * @param member 会员信息对象
      * @return 添加了几个会员
      */
-    Integer saveHonoured(TMember member);
+    Integer save(TMember member);
 
     /**
      * 按照ID编号删除会员
@@ -28,4 +28,10 @@ public interface HonouredService {
      * @return 删除了几个会员
      */
     Integer delHonoured(Integer id);
+
+    /**
+     * 修改会员信息
+     * @param member 会员信息
+     */
+    void update(TMember member);
 }
