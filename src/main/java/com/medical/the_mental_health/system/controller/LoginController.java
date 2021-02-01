@@ -1,6 +1,7 @@
 package com.medical.the_mental_health.system.controller;
 
 import com.wf.captcha.SpecCaptcha;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,7 @@ import java.io.IOException;
  */
 @RestController
 @RequestMapping("system")
+@CrossOrigin
 public class LoginController {
 
 
